@@ -2,37 +2,55 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Scam Guard</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <div class="wrap">
-    <h1>🛡️ Scam Guard</h1>
+  <header>
+    <div class="logo">
+      <span class="icon">🛡️</span>
+      <h1>Scam Guard</h1>
+    </div>
+    <div id="status-label" class="status-on">Active</div>
+  </header>
 
-    <label class="row">
-      <span>Enable Protection</span>
-      <input id="enabled" type="checkbox" />
-    </label>
+  <main>
+    <section class="control-group">
+      <div class="info">
+        <span class="title">Master Protection</span>
+        <span class="desc">Scan pages for phishing</span>
+      </div>
+      <label class="switch">
+        <input id="enabled" type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+    </section>
 
-    <label class="row">
-      <span>Block High-Risk Links</span>
-      <input id="blockHighRisk" type="checkbox" />
-    </label>
+    <section class="control-group">
+      <div class="info">
+        <span class="title">Block High-Risk</span>
+        <span class="desc">Instant kill on known threats</span>
+      </div>
+      <label class="switch">
+        <input id="blockHighRisk" type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </section>
 
-    <label class="row">
-      <span>Sensitivity</span>
+    <div class="setting-row">
+      <label for="sensitivity">Detection Sensitivity</label>
       <select id="sensitivity">
         <option value="low">Low</option>
-        <option value="medium">Medium</option>
+        <option value="medium" selected>Medium</option>
         <option value="high">High</option>
       </select>
-    </label>
+    </div>
+  </main>
 
-    <p class="note">
-      Offline heuristic detection. For stronger protection, connect to a threat‑intel API.
-    </p>
-  </div>
+  <footer>
+    <p class="note">Heuristic Engine v1.0.4</p>
+    <a href="#" class="pro-link">Upgrade for API Cloud Scan</a>
+  </footer>
 
   <script src="popup.js"></script>
 </body>
